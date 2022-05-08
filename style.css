@@ -3,7 +3,7 @@ html, body{
     font-size: 1.1rem;
     font-family: 'Times New Roman', Times, serif;
     background: linear-gradient(blue, lightblue, rgba(24, 23, 23, 0.3));
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
    
     
 }
@@ -54,10 +54,10 @@ ul{
 }
 
 img{
-    height: auto;
+   
     /* give image a max allowed width or height*/
-    min-height: 50vh;
-    max-width: 90vw;
+    
+    max-width: 90%;
     max-height: 300px;
     box-shadow: 5px 5px 15px 5px #242121;
 
