@@ -24,6 +24,11 @@ select.addEventListener('change', event => {
     let url = `https://dog.ceo/api/breed/${event.target.value}/images/random`
     //console.log(url); //we get now the url with image
     getDogImage(url)
+    dogInfo.assignMF()
+    dogInfo.assignAge()
+    dogInfo.assignLikes()
+    dogInfo.assignDislikes()
+   dogInfo.assignFact()
 
 })
 
@@ -43,7 +48,7 @@ const dogInfo = {
     maleNames: ["Sergio","Ryan","Bill","James","Marty","Angel","Pat","Toshiro","Yan-ping","Tetsuo","Akira","Jimmy","Carlos","William","Billy Bob","Manuel","Douglas","Steven","Howard","Donald","Barry","Thomas","Derek","Gary","Archie","Ned","Randy","Taylor","Kim","Roger","Raymond","Robert","Harvey","Aaron","George","Noel","Michael","Chuck","Lex","Charlie","Charles","Malcolm","Martin","Sean","Raven","Wolf","Miguel","Pablo","Paul","Jesus","Ali","Bruce","Dick","Phillip","Kirk","Kurt","John","Alexander","David","Beau","Mumtaz","Diwakar","Dale","Woody","Ariel","Hans","Jun","Chin-Yuan","Deepak","Christopher","Matthew","Joseph","James","Daniel","Robert","John","Kennedy","Jonathan","Adam","Justin","Robin","MrDefault"
     ],
     likesList: ['Loves it when you make the BED', 'To listen to music', 'Absolutely happy when you get back home', 'Enjoyes whatching TV', 'Adores sleeping in your bed', 'Drinking ice water from the puddles', 'Getting into the mud', 'Swimming in the pool', 'Barking really loud when you go out', 'Chewing your sleepers','Ice water from McDonalds','Kisses','Snuggles','Sniffing the air','Biting the wind','Trash cans','Raiding the cat box for treasure','Barking hello to friends','Stealing cat food','Sleeping in the car','Payaya','Stealing socks','New friends','Ear rubs','Sliced hot dogs','Running at top speed inside the house','Causing diversions','Bread','Sunbathing','Running through tall grass','Deep sighs','Ear scratchies','Licking people directly on the mouth','Destroying soft toys','The human bed','Squeaky toys','Sitting with (or on) people','Chicken','Going to bed after midnight',  'Puddles', 'Howling at Sirens','Staring out the window','Bubbles','Peanut butter','String cheese','Pats, rubs, and butt scritches', 'Your dirtiest, stinkiest, sweatiest clothes', 'Toys', 'Puzzles', 'Cheese', 'Bacon', 'Anything stolen off your plate', 'Swimming', 'Car Rides', 'Chasing squirrels', 'A nice, peaceful nap in a quiet spot', 'Sniffing the bushes', 'Sleeping in', 'Playing frisbee', 'Digging holes in the flower bed', 'Staring at you while pooping', 'Stealing blankets off the bed', 'Drinking out of puddles', 'Farting', 'Doing tricks', 'Agility', 'Barking at the delivery person', 'Stealing dirty laundry', 'Chewing your favorite shoe', 'Staring into space', 'Wrestling with friends', 'Going to the dog park', 'Getting as muddy as possible', 'Going on hikes', 'Annoying the cat', 'Playing tug of war', 'Waking you up at 4am for food', 'Staring at you with love', 'Sitting on your lap'],
-    dislikes: ['Eating alone', 'Roombas','Small children','Thunder','Staying clean after a bath','Nail trims','Being groomed','People','Showers','Being bored','Sharing food','Being home alone','Balloons','Suitcases','Being carried','Helicopters','Doorbells','Pillows','Landscapers/lawnmowers','Their own shadow','Going to bed late','Broccoli','Carrots','Vegetables','Vacuum clearners','Puddles', 'Bathing', 'Not being included', 'The neighbor', 'The UPS person', 'Garbage trucks', 'Thunderstorms', 'Wet grass', 'Burrs'],
+    dislikesList: ['Eating alone', 'Roombas','Small children','Thunder','Staying clean after a bath','Nail trims','Being groomed','People','Showers','Being bored','Sharing food','Being home alone','Balloons','Suitcases','Being carried','Helicopters','Doorbells','Pillows','Landscapers/lawnmowers','Their own shadow','Going to bed late','Broccoli','Carrots','Vegetables','Vacuum clearners','Puddles', 'Bathing', 'Not being included', 'The neighbor', 'The UPS person', 'Garbage trucks', 'Thunderstorms', 'Wet grass', 'Burrs'],
     factList: ['Remembers every squirrel they have ever seen','Wishes they knew how cars work','Thinks pond water tastes the very best','Can carry three tennis balls at once and is very proud of that.','Eats grass for fun',"Doesn't actually know their own name, just likes your voice.",'Understands more words than you think','Saw a shooting star once','Will only sleep with 2 blankets','Ate an entire cake at a birthday party before anyone noticed','Can hear a bag of cheese opening from half a mile away',"Believes that frogs are smarter than they look","Once gave a grasshopper a ride on their nose","Doesn't understand the stock market",'Can sprint up to 30mph',"Believes they could win Crufts, but can't afford a plane ticket.","Wishes there weren't so many different streaming services.",'Secretly enjoys baths, but will never tell.','Ate a bee and got stung, then did it again the next day','Unsure of the meaning of life, but believes it may involve bacon.','Truly believes they are a cat','Can actually count to 12, but has never had a reason to do so.','Feels a sense of longing when watching birds migrate in the Fall.',"Enjoys watching SNL, but doesn't understand the jokes",'Sheds enough hair to fill a 5-gallon bucket each week.','Responds to commands in English, German, and Klingon.','Only pretends to understand what you are saying, loves you anyway.','Caught a squirrel once, and now dreams about that moment every single night.',
     "Knows exactly how the universe will end, but doesn't care.",'Would be a top-notch violinist, if they had thumbs.','Dreams of breaking into the dog food plant down the road and eating EVERYTHING.','Can see one more color than any other dog. You will never know which one it is.','Won the award for "fastest lick of the kitchen counter" in 2018 (self-awarded).','Ears and tail are the same length (big ears)!','Takes charge and loudly demands treats','Very bouncy, scientists suspects that legs may contain springs.',"Prefers to eat at the same time as the humans - it's only polite!",'Originally from Tijuana, unkown level of fluency in Spanish.','Favorite hobby is sculpting (the fence, with their mouth)','Can eat an entire loaf of bread in one sitting',"Thinks they are the cat's best friend, but the cat considers them an acquaintence, at best.",'Chooses whether to listen to you on a cas-by-case basis','Can escape any harness ever made','Has an extra toe','Caught a butterfly and immediately spit it back out','Fences are less of an obstacle and more of a suggestion','Terrified of the kitten','Once ate an entire pack of gum','Can consume a rawhide chew in 30 seconds','Farts every time they sit down','Can howl on pitch','Will immediately present belly for rubs','Dream job: bacon taste-tester','Career: retired actor/consultant'],
     MF: '',
@@ -53,7 +58,66 @@ const dogInfo = {
     dislikes: '',
     fact: '',
 
+    //assign S
     assignMF(){
+        x = (Math.floor(Math.random() * 2)==0) //Math.random()>0.5 --> flip the coin
+        if (x) {
+            this.MF = 'Female'
+            this.assignName(this.femaleNames)
+         } else {
+            this.MF = 'Male'
+            this.assignName(this.maleNames)
+         } 
+
+         document.getElementById('MF').innerHTML = `S: ${this.MF}`
+    },
+
+    //assign the name
+    assignName(arr){
+        this.rname = arr[Math.floor(Math.random() * arr.length)]
+        document.querySelector('.name').innerHTML = `${this.rname}`
+
+    },
+
+    assignAge(){
+        this.age = Math.floor(Math.random() * 18 + 1)
+        document.getElementById('age').innerHTML = `Age: ${this.age}`
+    },
+
+    //Fisher–Yates shuffle Algorithm , we use this for the next functions to choose random items from the arrays
+    fisherYatesShuffle(array){
+        let m = array.length, t, i;
+        //while there is remaining elements to shuffle
+        while(m){
+            //pick a remaining element
+            i = Math.floor(Math.random() * m--);
+            // and swap it with the current element
+            t = array[m]
+            array[m] = array[i]
+            array[i] = t;
+        }
+        return array;
+    },
+
+
+    assignLikes(){
+        this.likes = this.fisherYatesShuffle(this.likesList).slice(0, 2);
+        //console.log(this.likes);//get first 2 elements from the suffled array 
+        document.getElementById('likes').innerHTML = `Likes: ${this.likes[0]}, ${this.likes[1]}`
+
+    },
+
+    assignDislikes(){
+        this.dislikes = this.fisherYatesShuffle(this.dislikesList).slice(0, 2);
+        //console.log(this.dislikes);//get first 2 elements from the suffled array 
+        document.getElementById('dislikes').innerHTML = `Disikes: ${this.dislikes[0]}, ${this.dislikes[1]}`
+
+    },
+    
+    assignFact(){
         
+        this.fact = this.factList[Math.floor(Math.random() * this.factList.length)]
+        document.getElementById('fun-fact').innerHTML = `Additional Info: ${this.fact}`
     }
+
 }
