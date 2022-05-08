@@ -57,7 +57,7 @@ img{
    
     /* give image a max allowed width or height*/
     
-    max-width: 90%;
+    max-width: 500px;
     max-height: 300px;
     box-shadow: 5px 5px 15px 5px #242121;
 
