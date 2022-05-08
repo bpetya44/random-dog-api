@@ -56,8 +56,8 @@ ul{
 img{
     height: auto;
     /* give image a max allowed width or height*/
-    
-    max-width: 90%;
+    min-height: 50vh;
+    max-width: 90vw;
     max-height: 300px;
     box-shadow: 5px 5px 15px 5px #242121;
 
